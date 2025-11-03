@@ -18,15 +18,15 @@ Ele permite que o usuário registre receitas e despesas, categorize transações
 ---
 ## Estrutura do projeto
 
-├── App.tsx           # Componente raiz do aplicativo
-├── index.ts          # Ponto de entrada / bootstrap
-├── src/              # Código fonte
-│   ├── screens/      # Telas do app
-│   ├── components/   # Componentes reutilizáveis
-│   ├── context/      # Provedores de estado
-│   ├── services/     # Utilitários / lógica de negócio
-│   └── assets/       # Imagens, ícones, estilos
-├── tsconfig.json     # Configuração do TypeScript
-├── package.json      # Dependências do projeto
-└── README.md         # Este arquivo
+├── App.tsx # Componente raiz do aplicativo
+├── index.ts # Ponto de entrada / bootstrap
+├── src/ # Código fonte
+│ ├── screens/ # Telas do app
+│ ├── components/ # Componentes reutilizáveis
+│ ├── context/ # Provedores de estado
+│ ├── services/ # Utilitários / lógica de negócio
+│ └── assets/ # Imagens, ícones, estilos
+├── tsconfig.json # Configuração do TypeScript
+├── package.json # Dependências do projeto
+└── README.md # Este arquivo
 
