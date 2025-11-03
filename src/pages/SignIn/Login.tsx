@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
+import { AuthStackParamList } from "../../routes/auth.routes"; // ajuste o caminho conforme necessário
 
 export default function SignIn() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,11 +28,10 @@ export default function SignIn() {
     if (!validateForm()) return;
     setLoading(true);
 
-    // Simula uma requisição de login
     setTimeout(() => {
       setLoading(false);
       alert("Login realizado com sucesso!");
-      navigation.navigate("Home" as never);
+      // Exemplo: se houver rota Home no AppStack, use outro tipo de NavigationProp
     }, 1500);
   };
 
@@ -64,15 +64,10 @@ export default function SignIn() {
         onPress={handleLogin}
         disabled={isFormInvalid || loading}
       >
-        {loading ? (
-          <ActivityIndicator color="#fff" />
-        ) : (
-          <Text style={styles.buttonText}>Entrar</Text>
-        )}
+        {loading ? <ActivityIndicator color="#fff" /> : <Text style={styles.buttonText}>Entrar</Text>}
       </TouchableOpacity>
 
-      {/* 👇 Botão de navegação para cadastro */}
-      <TouchableOpacity onPress={() => navigation.navigate("SignUp" as never)}>
+      <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
         <Text style={styles.linkText}>Cadastrar-se</Text>
       </TouchableOpacity>
     </View>
