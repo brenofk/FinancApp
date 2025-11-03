@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-native";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
-import { AuthStackParamList } from "../../routes/auth.routes"; // ajuste o caminho conforme necessário
+import { AuthStackParamList } from "../../routes/auth.routes"; 
 
 export default function SignIn() {
   const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
